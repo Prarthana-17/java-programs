@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        // array intialization 
+        
+        int[] a = {100,200,300,400,500};
+        
+        
+        
+        System.out.println("Enter your key");
+        int key = sc.nextInt();
+        
+        // Starting and ending declaration 
+        
+        int left = 0;
+        int right=a.length-1;
+        
+        boolean found = false;
+                
+        while(left<=right){
+            int mid = left+(right-left)/2;
+            if(a[mid]==key){
+                System.out.println("Found at index :" + mid);
+                found = true;
+                break;
+            }
+            else if(a[mid]<key){
+                left = mid+1;
+            }
+            else{
+                right = mid-1;
+            }
+            
+        }
+        
+        if(!found){
+            System.out.println("Element not found");
+        }
+
+    }
+}
